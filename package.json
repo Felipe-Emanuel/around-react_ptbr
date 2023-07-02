@@ -19,7 +19,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://Felipe-Emanuel.github.io/around-react",
+  "homepage": "https://felipe-emanuel.github.io/around-react_ptbr/",
   "eslintConfig": {
     "extends": [
       "react-app",
