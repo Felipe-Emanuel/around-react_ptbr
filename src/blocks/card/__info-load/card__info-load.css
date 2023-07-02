@@ -17,7 +17,8 @@
     width: 100%;
   }
   100% {
-    width: 100%; visibility: hidden;
+    width: 100%;
+    visibility: hidden;
   }
 }
 
