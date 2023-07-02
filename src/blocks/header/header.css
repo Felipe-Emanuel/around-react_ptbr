@@ -1,0 +1,6 @@
+.header {
+  flex-direction: column;
+  padding-top: 1.68rem;
+  gap: 1.68rem;
+  width: 100%;
+}

@@ -1,0 +1,19 @@
+.popup__form {
+  position: fixed;
+  background-color: #fff;
+  color: #000;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 0.6rem;
+  padding: 2rem;
+}
+
+@media screen and (min-width: 648px) {
+  .popup__form {
+    width: 23.8rem;
+  }
+}

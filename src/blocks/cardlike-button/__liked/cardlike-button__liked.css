@@ -1,0 +1,14 @@
+.cardlike-button__liked {
+  position: relative;
+  background-image: url("../../../images/filledHeart.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+  width: 1.5rem;
+  height: 1.18rem;
+  transition: all 150ms ease-in;
+  cursor: pointer;
+}
+
+.cardlike-button__liked:hover {
+  opacity: 0.6;
+}

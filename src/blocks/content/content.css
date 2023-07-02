@@ -1,0 +1,28 @@
+.content {
+  max-width: 55rem;
+  height: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+  background-color: #000;
+  color: #fff;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+@media screen and (min-width: 650px) {
+  .content {
+    width: 37.5rem;
+  }
+}
+
+@media screen and (min-width: 930px) {
+  .content {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .content {
+    padding: 0 12.5rem;
+  }
+}
