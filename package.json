@@ -1,6 +1,7 @@
 {
   "name": "around-react_ptbr",
   "version": "0.1.0",
+  "homepage": "https://felipe-emanuel.github.io/around-react_ptbr/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -19,7 +20,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://felipe-emanuel.github.io/around-react_ptbr/",
   "eslintConfig": {
     "extends": [
       "react-app",
