@@ -1,7 +1,8 @@
 import { useState } from "react";
 
+const initialValue = { name: "", about: "", imageProfile: "", link: "" };
+
 export const useInput = () => {
-  const initialValue = { name: "", about: "", imageProfile: "", link: "" };
   const [value, setValue] = useState(initialValue);
 
   const handleChange = (e) => {

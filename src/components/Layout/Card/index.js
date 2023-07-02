@@ -1,9 +1,9 @@
 import TrashIcon from "../../../images/trashIcon.svg";
-import { Title } from "../../utils/Title";
-import { FormPopup } from "../../utils/Form/FormPopup";
+import { Title } from "../../Layout/Title";
+import { FormPopup } from "../../Layout/Form/FormPopup";
 import { apiOptions } from "../../utils/api/config";
 import { ShowedImage } from "../ShowedImage";
-import { SkeletonCard } from "../../utils/load/SkeletonCard";
+import { SkeletonCard } from "../../Layout/load/SkeletonCard";
 import { useApiContext } from "../../../data/hooks/useApiContext";
 import { useEffect, useState } from "react";
 import { usePopup } from "../../../data/hooks/usePopup";

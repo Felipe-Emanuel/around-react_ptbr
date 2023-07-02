@@ -1,17 +1,11 @@
-import { useEffect } from "react";
-import { Normalize } from "../../../functions/Normalize";
+import { updateDate } from "../../utils/constants";
 
 export const Footer = () => {
-  const { currentYear, updateDate } = Normalize();
-
-  useEffect(() => {
-    updateDate();
-  }, [updateDate]);
 
   return (
     <footer className="footer">
       <p>
-        &copy; <span className="year">{currentYear}</span> Around The U.S.
+        &copy; <span className="year">{updateDate()}</span> Around The U.S.
       </p>
     </footer>
   );

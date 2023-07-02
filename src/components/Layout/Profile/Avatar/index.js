@@ -1,8 +1,8 @@
 import LoadingAvatar from "../../../../images/profile/loadingAvatar.png";
-import { Input } from "../../../utils/Form/Input.js";
+import { Input } from "../../Form/Input";
 import { useInput } from "../../../../data/hooks/useInput";
 import { usePopup } from "../../../../data/hooks/usePopup";
-import { FormPopup } from "../../../utils/Form/FormPopup";
+import { FormPopup } from "../../Form/FormPopup";
 import { useApiContext } from "../../../../data/hooks/useApiContext";
 
 export const Avatar = ({ avatar }) => {

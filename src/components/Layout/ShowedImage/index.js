@@ -1,4 +1,4 @@
-import { Button } from "../../utils/Buttons/Button";
+import { Button } from "../Buttons/Button";
 
 export const ShowedImage = ({ link, name, handleClose, isShowedImage }) => {
   return (
