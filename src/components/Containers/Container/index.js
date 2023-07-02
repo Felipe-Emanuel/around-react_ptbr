@@ -1,3 +1,3 @@
-export const Main = ({ children }) => (
+export const Container = ({ children }) => (
   <main className="content">{children}</main>
 );
