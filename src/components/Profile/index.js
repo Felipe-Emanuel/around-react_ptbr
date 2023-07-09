@@ -1,7 +1,7 @@
 import { Avatar } from "./Avatar";
 import { useEffect } from "react";
 import { ProfileHeader } from "../ProfileHeader";
-import { useApiContext } from "../../../data/hooks/useApiContext";
+import { useApiContext } from "../../data/hooks/useApiContext";
 
 export const Profile = () => {
   const { profile, getUserProfile } = useApiContext();

@@ -1,5 +1,5 @@
-import Logo from "../../../images/logo/Vector.svg";
-import Line from "../../../images/Line.svg";
+import Logo from "../../images/logo/Vector.svg";
+import Line from "../../images/Line.svg";
 
 export const Header = () => (
   <nav className="header">

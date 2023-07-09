@@ -1,12 +1,12 @@
-import TrashIcon from "../../../images/trashIcon.svg";
-import { Title } from "../../Layout/Title";
-import { FormPopup } from "../../Layout/Form/FormPopup";
-import { apiOptions } from "../../utils/api/config";
+import TrashIcon from "../../images/trashIcon.svg";
+import { Title } from "../Title";
+import { FormPopup } from "../Form/FormPopup";
+import { apiOptions } from "../utils/config";
 import { ShowedImage } from "../ShowedImage";
-import { SkeletonCard } from "../../Layout/load/SkeletonCard";
-import { useApiContext } from "../../../data/hooks/useApiContext";
+import { SkeletonCard } from "../load/SkeletonCard";
+import { useApiContext } from "../../data/hooks/useApiContext";
 import { useEffect, useState } from "react";
-import { usePopup } from "../../../data/hooks/usePopup";
+import { usePopup } from "../../data/hooks/usePopup";
 
 export const Card = () => {
   const { cards, isLoading, getAllCards, removeCard, changeLikeState } =

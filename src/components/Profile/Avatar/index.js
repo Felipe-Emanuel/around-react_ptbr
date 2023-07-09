@@ -1,9 +1,9 @@
-import LoadingAvatar from "../../../../images/profile/loadingAvatar.png";
+import LoadingAvatar from "../../../images/profile/loadingAvatar.png";
 import { Input } from "../../Form/Input";
-import { useInput } from "../../../../data/hooks/useInput";
-import { usePopup } from "../../../../data/hooks/usePopup";
+import { usePopup } from "../../../data/hooks/usePopup";
+import { useInput } from "../../../data/hooks/useInput";
 import { FormPopup } from "../../Form/FormPopup";
-import { useApiContext } from "../../../../data/hooks/useApiContext";
+import { useApiContext } from "../../../data/hooks/useApiContext";
 
 export const Avatar = ({ avatar }) => {
   const { handleSubmit, patchAvatar } = useApiContext();

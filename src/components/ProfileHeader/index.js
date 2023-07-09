@@ -1,13 +1,13 @@
-import Edit from "../../../images/Eddit.svg";
+import Edit from "../../images/Eddit.svg";
 import { Title } from "../Title";
 import { Input } from "../Form/Input";
-import { Button } from "../../Layout/Buttons/Button";
+import { Button } from "../../components/Buttons/Button";
 import { useState } from "react";
-import { usePopup } from "../../../data/hooks/usePopup";
-import { useInput } from "../../../data/hooks/useInput";
+import { usePopup } from "../../data/hooks/usePopup";
+import { useInput } from "../../data/hooks/useInput";
 import { FormPopup } from '../Form/FormPopup'
-import { useApiContext } from "../../../data/hooks/useApiContext";
-import { capitalizeString } from "../../utils/constants";
+import { useApiContext } from "../../data/hooks/useApiContext";
+import { capitalizeString } from "../utils/constants";
 
 export const ProfileHeader = ({ name, about }) => {
   const { isOpen, handleChangePopupState } = usePopup();
