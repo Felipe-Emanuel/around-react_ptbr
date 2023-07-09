@@ -6,8 +6,8 @@ import { usePopup } from "../../data/hooks/usePopup";
 import { useInput } from "../../data/hooks/useInput";
 import { AddPlacePopup } from "../AddPlacePopup";
 import { useApiContext } from "../../data/hooks/useApiContext";
-import { capitalizeString } from "../utils/constants";
 import { EditProfilePopup } from "../EditProfilePopup";
+import { capitalizeString } from "../../utils/constants";
 
 export const ProfileHeader = ({ name, about }) => {
   const { isOpen, handleChangePopupState } = usePopup();

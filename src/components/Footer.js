@@ -1,4 +1,4 @@
-import { updateDate } from "./utils/constants";
+import { updateDate } from "../utils/constants";
 
 export const Footer = () => {
 
