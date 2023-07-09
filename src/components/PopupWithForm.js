@@ -1,5 +1,5 @@
-import { Title } from "../../Title/index.js";
-import { SubmitButton } from "../../Buttons/SubmitButton/index.js";
+import { Title } from "./Title/index.js";
+import { SubmitButton } from "./Buttons/SubmitButton/index.js";
 
 export const FormPopup = ({
   children,

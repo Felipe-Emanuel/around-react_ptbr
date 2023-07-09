@@ -1,12 +1,12 @@
-import TrashIcon from "../../images/trashIcon.svg";
-import { Title } from "../Title";
-import { FormPopup } from "../Form/FormPopup";
-import { apiOptions } from "../utils/config";
-import { ShowedImage } from "../ShowedImage";
-import { SkeletonCard } from "../load/SkeletonCard";
-import { useApiContext } from "../../data/hooks/useApiContext";
+import TrashIcon from "../images/trashIcon.svg";
+import { Title } from "./Title";
+import { usePopup } from "../data/hooks/usePopup";
+import { apiOptions } from "./utils/config";
+import { ShowedImage } from "./ImagePopup";
+import { SkeletonCard } from "./load/SkeletonCard";
+import { useApiContext } from "../data/hooks/useApiContext";
+import { RemoveCardPopup } from "./RemoveCardPopup";
 import { useEffect, useState } from "react";
-import { usePopup } from "../../data/hooks/usePopup";
 
 export const Card = () => {
   const { cards, isLoading, getAllCards, removeCard, changeLikeState } =
@@ -42,22 +42,6 @@ export const Card = () => {
 
   const handleLikeCard = (cardId, method) => changeLikeState(cardId, method);
 
-  const renderRemovePopup = () => (
-    <div
-      className={`popup popup-removeCard ${isOpen ? "" : "hidden"}`}
-      onClick={() => handleChangePopupState()}
-    >
-      <FormPopup
-        formId="popup-edit"
-        title="Tem certeza?"
-        onClick={() => handleChangePopupState()}
-        handleSubmit={(e) => handleRemoveCard(e, currentCardId)}
-        isOpen={isOpen}
-        label="sim"
-      />
-    </div>
-  );
-
   if (cards?.length <= 0) return <SkeletonCard />;
 
   return (
@@ -68,7 +52,12 @@ export const Card = () => {
         name={currentImage.name}
         handleClose={handleCloseCard}
       />
-      {renderRemovePopup()}
+      <RemoveCardPopup
+        currentCardId={currentCardId}
+        handleChangePopupState={handleChangePopupState}
+        handleRemoveCard={handleRemoveCard}
+        isOpen={isOpen}
+      />
       {cards?.map((card, i) => {
         if (!card) return null;
         const { likes, link, name, owner, _id } = card;

@@ -1,13 +1,13 @@
 import Edit from "../../images/Eddit.svg";
 import { Title } from "../Title";
-import { Input } from "../Form/Input";
 import { Button } from "../../components/Buttons/Button";
 import { useState } from "react";
 import { usePopup } from "../../data/hooks/usePopup";
 import { useInput } from "../../data/hooks/useInput";
-import { FormPopup } from '../Form/FormPopup'
+import { AddPlacePopup } from "../AddPlacePopup";
 import { useApiContext } from "../../data/hooks/useApiContext";
 import { capitalizeString } from "../utils/constants";
+import { EditProfilePopup } from "../EditProfilePopup";
 
 export const ProfileHeader = ({ name, about }) => {
   const { isOpen, handleChangePopupState } = usePopup();
@@ -41,77 +41,23 @@ export const ProfileHeader = ({ name, about }) => {
     );
   };
 
-  const renderAddImagePopup = () => (
-    <div
-      className={`popup popup-addImage ${isAddNewCard ? "" : "hidden"}`}
-      onClick={handleClick}
-    >
-      <FormPopup
-        formId="popup-addImage"
-        title="Novo Lugar"
-        handleSubmit={onhandleAddCardSubmit}
-        onClick={handleClick}
-        isOpen={isAddNewCard}
-      >
-        <Input
-          type="text"
-          placeholder="Nome do lugar"
-          minLength="2"
-          maxLength="30"
-          name="name"
-          onChange={handleChange}
-          value={value.name}
-        />
-        <Input
-          type="url"
-          placeholder="URL da imagem"
-          name="link"
-          onChange={handleChange}
-          value={value.link}
-        />
-      </FormPopup>
-    </div>
-  );
-
-  const renderProfileEditPopup = () => (
-    <div
-      className={`popup popup-edit ${isOpen ? "" : "hidden"}`}
-      onClick={handleChangePopupState}
-    >
-      <FormPopup
-        formId="popup-edit"
-        title="Editar Perfil"
-        handleSubmit={onHandleProfileSubmit}
-        onClick={handleChangePopupState}
-        isOpen={isOpen}
-      >
-        <Input
-          type="text"
-          placeholder="Insira seu nome"
-          minLength="2"
-          maxLength="40"
-          name="name"
-          onChange={handleChange}
-          value={value.name}
-        />
-        <Input
-          type="text"
-          placeholder="Insira sua profissão"
-          minLength="2"
-          maxLength="200"
-          name="about"
-          onChange={handleChange}
-          value={value.about}
-        />
-      </FormPopup>
-    </div>
-  );
-
   return (
     <>
       <div className="profile__header-info">
-        {renderAddImagePopup()}
-        {renderProfileEditPopup()}
+        <AddPlacePopup
+          handleChange={handleChange}
+          handleClick={handleClick}
+          isAddNewCard={isAddNewCard}
+          onhandleAddCardSubmit={onhandleAddCardSubmit}
+          value={value}
+        />
+        <EditProfilePopup
+          handleChange={handleChange}
+          handleChangePopupState={handleChangePopupState}
+          isOpen={isOpen}
+          onHandleProfileSubmit={onHandleProfileSubmit}
+          value={value}
+        />
         {name === undefined && (
           <div className="skeletonLoading">
             <div className="skeleton-title"></div>
