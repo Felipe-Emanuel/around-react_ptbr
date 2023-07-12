@@ -5,30 +5,12 @@ export const APIContext = createContext();
 
 export const APIProvider = ({ children }) => {
   const [cards, setCards] = useState([]);
-  const [profile, setProfile] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const getAllCards = async () => {
     const results = await api.getCards();
 
     setCards(results);
-  };
-
-  const getUserProfile = async () => {
-    const results = await api.getProfile();
-    setProfile(results);
-  };
-
-  const patchAvatar = async (avatar) => {
-    const results = await api.updateAvatar(avatar);
-
-    setProfile(results);
-  };
-
-  const updateProfileInfo = async (inputValues) => {
-    const results = await api.updateProfile(inputValues);
-
-    setProfile(results);
   };
 
   const addCard = async (newCard) => {
@@ -69,16 +51,12 @@ export const APIProvider = ({ children }) => {
     <APIContext.Provider
       value={{
         getAllCards,
-        getUserProfile,
-        patchAvatar,
-        updateProfileInfo,
         handleSubmit,
         addCard,
         removeCard,
         changeLikeState,
         setIsLoading,
         cards,
-        profile,
         isLoading,
       }}
     >

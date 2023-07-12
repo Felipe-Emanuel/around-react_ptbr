@@ -1,11 +1,9 @@
-import LoadingAvatar from "../../../images/profile/loadingAvatar.png";
-import { usePopup } from "../../../data/hooks/usePopup";
-import { useInput } from "../../../data/hooks/useInput";
-import { useApiContext } from "../../../data/hooks/useApiContext";
-import { EditAvatarPopup } from "../../EditAvatarPopup";
+import LoadingAvatar from "../../images/profile/loadingAvatar.png";
+import { usePopup } from "../../data/hooks/usePopup";
+import { useInput } from "../../data/hooks/useInput";
+import { EditAvatarPopup } from "../EditAvatarPopup";
 
-export const Avatar = ({ avatar }) => {
-  const { handleSubmit, patchAvatar } = useApiContext();
+export const Avatar = ({ avatar, patchAvatar }) => {
   const { isOpen, handleChangePopupState } = usePopup();
   const { value, handleChange, reset } = useInput();
 
@@ -14,7 +12,10 @@ export const Avatar = ({ avatar }) => {
   };
 
   const onHandleSubmit = async (e) => {
-    handleSubmit(e, patchAvatar, newAvatar, handleChangePopupState, reset);
+    e.preventDefault();
+    patchAvatar(newAvatar)
+    handleChangePopupState()
+    reset()
   };
 
   return (

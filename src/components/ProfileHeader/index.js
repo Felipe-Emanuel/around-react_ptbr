@@ -9,10 +9,15 @@ import { useApiContext } from "../../data/hooks/useApiContext";
 import { EditProfilePopup } from "../EditProfilePopup";
 import { capitalizeString } from "../../utils/constants";
 
-export const ProfileHeader = ({ name, about }) => {
+export const ProfileHeader = ({
+  name,
+  about,
+  updateCurrentUser,
+  updateProfileInfo,
+}) => {
   const { isOpen, handleChangePopupState } = usePopup();
   const { value, handleChange, reset } = useInput();
-  const { updateProfileInfo, addCard, handleSubmit } = useApiContext();
+  const { addCard, handleSubmit } = useApiContext();
 
   const [isAddNewCard, setIsAddNewCard] = useState(false);
   const handleClick = () => setIsAddNewCard((isAddNewCard) => !isAddNewCard);
@@ -32,13 +37,11 @@ export const ProfileHeader = ({ name, about }) => {
   };
 
   const onHandleProfileSubmit = async (e) => {
-    handleSubmit(
-      e,
-      updateProfileInfo,
-      inputValues,
-      handleChangePopupState,
-      reset
-    );
+    e.preventDefault();
+    updateCurrentUser(inputValues);
+    updateProfileInfo(inputValues);
+    handleChangePopupState();
+    reset();
   };
 
   return (
