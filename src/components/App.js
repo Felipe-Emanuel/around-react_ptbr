@@ -1,10 +1,13 @@
 import { APIProvider } from "../contexts/APIContext";
+import { CurrentUserContextProvider } from "../contexts/CurrentUserContext";
 import { Main } from "./Main";
 
 export function App() {
   return (
     <APIProvider>
-      <Main />
+      <CurrentUserContextProvider>
+        <Main />
+      </CurrentUserContextProvider>
     </APIProvider>
   );
 }

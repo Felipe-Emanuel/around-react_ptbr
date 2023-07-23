@@ -3,14 +3,15 @@ import { Title } from "./Title";
 import { usePopup } from "../data/hooks/usePopup";
 import { ShowedImage } from "./ImagePopup";
 import { SkeletonCard } from "./load/SkeletonCard";
-import { useApiContext } from "../data/hooks/useApiContext";
 import { RemoveCardPopup } from "./RemoveCardPopup";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { apiOptions } from "../utils/config";
+import { APIContext } from "../contexts/APIContext";
 
 export const Card = () => {
+  const ApiContext = useContext(APIContext)
   const { cards, isLoading, getAllCards, removeCard, changeLikeState } =
-    useApiContext();
+  ApiContext;
   const { handleChangePopupState, isOpen } = usePopup();
   const [isShowedImage, setIsShowedImage] = useState(false);
   const [currentCardId, setCurrentCardId] = useState("");
@@ -21,7 +22,6 @@ export const Card = () => {
 
   useEffect(() => {
     getAllCards();
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoading]);
 
