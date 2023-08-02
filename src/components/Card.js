@@ -12,7 +12,7 @@ export const Card = () => {
   const ApiContext = useContext(APIContext)
   const { cards, isLoading, getAllCards, removeCard, changeLikeState } =
   ApiContext;
-  const { handleChangePopupState, isOpen } = usePopup();
+  const { isOpen, handleChangePopupState } = usePopup();
   const [isShowedImage, setIsShowedImage] = useState(false);
   const [currentCardId, setCurrentCardId] = useState("");
   const [currentImage, setCurrentImaged] = useState({

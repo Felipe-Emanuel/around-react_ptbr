@@ -3,10 +3,15 @@ import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { Section } from "./Containers/Section";
 import { Container } from "./Containers/Container";
+import { useContext } from "react";
+import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import { Avatar } from "./Avatar";
 import { ProfileHeader } from "./ProfileHeader";
 
-export function Main({ currentUser, setCurrentUser, updateProfileInfo, patchAvatar  }) {
+export function Main() {
+  const { currentUser, setCurrentUser, updateProfileInfo, patchAvatar } =
+    useContext(CurrentUserContext);
+
   return (
     <Container>
       <Header />
