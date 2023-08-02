@@ -1,13 +1,20 @@
+import { useContext } from "react";
 import { APIProvider } from "../contexts/APIContext";
-import { CurrentUserContextProvider } from "../contexts/CurrentUserContext";
+import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import { Main } from "./Main";
 
 export function App() {
+    const { currentUser, setCurrentUser, updateProfileInfo, patchAvatar } =
+    useContext(CurrentUserContext);
+
   return (
     <APIProvider>
-      <CurrentUserContextProvider>
-        <Main />
-      </CurrentUserContextProvider>
+        <Main
+          currentUser={currentUser}
+          setCurrentUser={setCurrentUser}
+          updateProfileInfo={updateProfileInfo}
+          patchAvatar={patchAvatar}
+        />
     </APIProvider>
   );
 }
